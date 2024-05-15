@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: hot_wire
+
+test:
+  <<: *default
+  database: hot_wire_test
+
+production:
+  <<: *default
+  database: hot_wire_production
+  username: hot_wire
+  password: <%= ENV["HOT_WIRE_DATABASE_PASSWORD"] %>
