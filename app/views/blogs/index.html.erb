@@ -1,14 +1,11 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Blogs</h1>
-
-<div id="blogs">
-  <% @blogs.each do |blog| %>
-    <%= render blog %>
-    <p>
-      <%= link_to "Show this blog", blog %>
-    </p>
+<div class="container mt-3">
+  <%= turbo_frame_tag "create-blog" do %>
+    <div class="d-flex justify-content-between align-items-center">
+      <h1 class="display-3">Blogs</h1>
+      <%= link_to "New blog", new_blog_path, class: "btn btn-primary btn-lg ms-auto" %>
+    </div>
   <% end %>
+  <div id="blogs" class="mt-4">
+    <%= render @blogs %>
+  </div>
 </div>
-
-<%= link_to "New blog", new_blog_path %>

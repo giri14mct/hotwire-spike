@@ -3,15 +3,17 @@
     <strong>Title:</strong>
     <%= blog.title %>
   </p>
-
   <p>
     <strong>Author:</strong>
     <%= blog.author %>
   </p>
-
   <p>
     <strong>Content:</strong>
     <%= blog.content %>
   </p>
-
+  <div class="d-flex gap-3 justify-content-start">
+    <%= link_to "Edit", edit_blog_path(blog), class: "btn btn-secondary" %>
+    <%= button_to "Delete", "/blogs/#{blog.id}", method: :delete, class: "btn btn-secondary" %>
+  </div>
+  <hr>
 </div>
