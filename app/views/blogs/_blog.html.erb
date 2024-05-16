@@ -1,4 +1,4 @@
-<div id="<%= dom_id blog %>">
+<%= tag.div id: dom_id(blog) do %>
   <p>
     <strong>Title:</strong>
     <%= blog.title %>
@@ -11,9 +11,9 @@
     <strong>Content:</strong>
     <%= blog.content %>
   </p>
-  <div class="d-flex gap-3 justify-content-start">
+  <div class="gap-3 d-flex justify-content-start">
     <%= link_to "Edit", edit_blog_path(blog), class: "btn btn-secondary" %>
     <%= link_to "Delete", blog_path(blog), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: "btn btn-secondary" %>
   </div>
   <hr>
-</div>
+<% end %>
