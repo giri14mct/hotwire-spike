@@ -13,7 +13,8 @@ Metrics/ClassLength:
   Max: 150
 
 Metrics/LineLength: 
-  Max: 40
+  Enabled: false
+
 Metrics/CyclomaticComplexity:
   Enabled: false
 
