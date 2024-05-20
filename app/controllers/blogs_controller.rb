@@ -5,6 +5,7 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
+    respond_to :json, :xml, :html
   end
 
   def show; end
